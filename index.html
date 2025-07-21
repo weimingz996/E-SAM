@@ -1,0 +1,294 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=0.2">
+  <meta charset="utf-8">
+  <meta name="description"
+        content="E-SAM">
+  <meta name="keywords" content="Monocular 360 Depth Estimation">
+  <title>E-SAM</title>
+
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+
+
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/Logo.png">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+  <script src="./static/js/script.js"></script>
+</head>
+<body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+</nav>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <!-- <h1 class="title is-1 publication-title">PanDA:
+            </h1> -->
+          <h1 class="title is-1 publication-title">
+            E-SAM: Training-Free Segment Every Entity Model</h1>
+
+            <h1 class="is-size-4 publication-authors">
+              ICCV 2025</h1>
+
+          <div class="is-size-4 publication-authors">
+            <br>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?hl=zh-CN&user=cdtgqkgAAAAJ">Weiming Zhang</a><sup>1</sup></a>&nbsp</a>&nbsp</a>&nbsp</a>&nbsp
+            </span>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?hl=zh-CN&user=Zd-5kV4AAAAJ">Dingwen Xiao</a><sup>1</sup></a>&nbsp</a>&nbsp</a>&nbsp
+            </span>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?hl=zh-CN&user=gtglwgYAAAAJ">Lei Chen</a><sup>1,2</sup></a>&nbsp</a>&nbsp</a>&nbsp
+            </span>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=SReb2csAAAAJ&hl=zh-CN">Lin WANG</a><sup>3&dagger;</sup></a>&nbsp</a>&nbsp</a>&nbsp
+            </span>
+          </div>
+
+          <div class="is-size-4 publication-authors">
+            <span class="author-block"><sup>1</sup>AI Thrust, HKUST(GZ)</a>&nbsp</a>&nbsp</a>&nbsp</a>&nbsp</a>&nbsp </span>
+            <span class="author-block"><sup>2</sup>HKUST</a>&nbsp</a>&nbsp</a>&nbsp</a>&nbsp</a>&nbsp </span>
+            <span class="author-block"><sup>3</sup>NTU</a>&nbsp</a>&nbsp</a>&nbsp</a>&nbsp</a>&nbsp </span>
+          </div>
+
+          <div class="is-size-4 publication-authors">
+            <span class="author-block">&dagger; Corresponding author</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <span class="link-block">
+                    <a class="external-link button is-normal is-rounded is-dark", href="https://arxiv.org/abs/2407.04621", target="_blank">
+                        <span class="icon">
+                            <svg class="svg-inline--fa fa-file-pdf fa-w-12" style="position: relative; top: 0.15em;" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="file-pdf" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" data-fa-i2svg=""><path fill="currentColor" d="M181.9 256.1c-5-16-4.9-46.9-2-46.9 8.4 0 7.6 36.9 2 46.9zm-1.7 47.2c-7.7 20.2-17.3 43.3-28.4 62.7 18.3-7 39-17.2 62.9-21.9-12.7-9.6-24.9-23.4-34.5-40.8zM86.1 428.1c0 .8 13.2-5.4 34.9-40.2-6.7 6.3-29.1 24.5-34.9 40.2zM248 160h136v328c0 13.3-10.7 24-24 24H24c-13.3 0-24-10.7-24-24V24C0 10.7 10.7 0 24 0h200v136c0 13.2 10.8 24 24 24zm-8 171.8c-20-12.2-33.3-29-42.7-53.8 4.5-18.5 11.6-46.6 6.2-64.2-4.7-29.4-42.4-26.5-47.8-6.8-5 18.3-.4 44.1 8.1 77-11.6 27.6-28.7 64.6-40.8 85.8-.1 0-.1.1-.2.1-27.1 13.9-73.6 44.5-54.5 68 5.6 6.9 16 10 21.5 10 17.9 0 35.7-18 61.1-61.8 25.8-8.5 54.1-19.1 79-23.2 21.7 11.8 47.1 19.5 64 19.5 29.2 0 31.2-32 19.7-43.4-13.9-13.6-54.3-9.7-73.6-7.2zM377 105L279 7c-4.5-4.5-10.6-7-17-7h-6v128h128v-6.1c0-6.3-2.5-12.4-7-16.9zm-74.1 255.3c4.1-2.7-2.5-11.9-42.8-9 37.1 15.8 42.8 9 42.8 9z"></path></svg>
+                        </span>
+                        <span>Paper</span>
+                    </a>
+              </span>
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2503.12094" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://github.com/caozidong/PanDA" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2503.12094" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    🤗
+                  </span>
+                  <span>Demo</span>
+                </a>
+              </span>
+              <span class="link-block">
+                    <a class="external-link button is-normal is-rounded is-dark", href="https://arxiv.org/abs/2407.04621", target="_blank">
+                        <span class="icon">
+                            <svg class="svg-inline--fa fa-file-pdf" aria-hidden="true" style="position: relative; top: 0.15em;" width="1em" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-bookmarks" viewBox="0 0 16 16"> <path fill="currentColor" fill-rule="evenodd" d="M2 4a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v11.5a.5.5 0 0 1-.777.416L7 13.101l-4.223 2.815A.5.5 0 0 1 2 15.5V4zm2-1a1 1 0 0 0-1 1v10.566l3.723-2.482a.5.5 0 0 1 .554 0L11 14.566V4a1 1 0 0 0-1-1H4z" fill="white"></path> <path fill="currentColor" fill-rule="evenodd" d="M4.268 1H12a1 1 0 0 1 1 1v11.768l.223.148A.5.5 0 0 0 14 13.5V2a2 2 0 0 0-2-2H6a2 2 0 0 0-1.732 1z" fill="white"></path> </svg>
+                        </span>
+                        <span>Poster</span>
+                    </a>
+              </span>
+              <span class="link-block">
+                    <a class="external-link button is-normal is-rounded is-dark", href="#bib", target="_blank">
+                        <span class="icon">
+                            <svg class="svg-inline--fa fa-file-pdf" aria-hidden="true" style="position: relative; top: 0.15em;" width="1em" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-bookmarks" viewBox="0 0 16 16"> <path fill="currentColor" fill-rule="evenodd" d="M2 4a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v11.5a.5.5 0 0 1-.777.416L7 13.101l-4.223 2.815A.5.5 0 0 1 2 15.5V4zm2-1a1 1 0 0 0-1 1v10.566l3.723-2.482a.5.5 0 0 1 .554 0L11 14.566V4a1 1 0 0 0-1-1H4z" fill="white"></path> <path fill="currentColor" fill-rule="evenodd" d="M4.268 1H12a1 1 0 0 1 1 1v11.768l.223.148A.5.5 0 0 0 14 13.5V2a2 2 0 0 0-2-2H6a2 2 0 0 0-1.732 1z" fill="white"></path> </svg>
+                        </span>
+                        <span>BibTex</span>
+                    </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <h4 class="subtitle has-text-centered">
+        <div class="content has-text-justified">
+          <p>
+            E-SAM is a novel <b>training-free framework</b> that exhibits exceptional Entity Segmentation</b> capability. It mitigates the over-segmentation and under-segmentation challenges inherent in AMG by integrating Multi-level Mask Generation (MMG), Entity-level Mask Refinement (EMR), and Under-Segmentation Refinement (USR). The main contributions are as follows:
+            <ul type="1">
+              <li>We design E-SAM, a novel framework aimed at enhancing SAM's performance in entity segmentation. </span></li>
+              <li>We design MMG, EMR, and USR modules to ultimately produce a high-quality entity-level segmentation map. </span></li>
+              <li>We carry out extensive experiments demonstrate that E-SAM significantly outperforms both SAM and existing Entity Segmentation methods. </span></li>
+            </ul>
+
+          </p>
+        </div>
+      </h4>
+
+    </div>
+  </div>
+</section>
+
+<section class="section"  style="margin-top: 0; padding-top: 50px;">
+  <h2 class="title is-4" style="text-align: center;">Entity Segmentation in Open-World Scenarios</h2>
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+
+        <video poster="" id="ade" autoplay controls muted loop playsinline style="width: 80%; display: block; margin: auto;">
+          <source src="video/demo_1.mp4"
+                  type="video/mp4">
+        </video>
+        <video poster="" id="ade" autoplay controls muted loop playsinline style="width: 80%; display: block; margin: auto;">
+            <source src="video/demo_2.mp4"
+                    type="video/mp4">
+          </video>
+          <video poster="" id="ade" autoplay controls muted loop playsinline style="width: 80%; display: block; margin: auto;">
+            <source src="video/demo_3.mp4"
+                    type="video/mp4">
+          </video>
+          <video poster="" id="ade" autoplay controls muted loop playsinline style="width: 80%; display: block; margin: auto;">
+            <source src="video/demo_4.mp4"
+                    type="video/mp4">
+          </video>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- <section class="section" style="background-color:#efeff081"> -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-4">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Entity Segmentation (ES) aims at identifying and segmenting distinct entities within an image without the need for predefined class labels. This characteristic makes ES well-suited to open-world applications with adaptation to diverse and dynamically changing environments, where new and previously unseen entities may appear frequently. Existing ES methods either require large annotated datasets or high training costs, limiting their scalability and adaptability. Recently, the Segment Anything Model (SAM), especially in its Automatic Mask Generation (AMG) mode, has shown potential for holistic image segmentation. However, it struggles with over-segmentation and under-segmentation, making it less effective for ES. In this paper, we introduce <b>E-SAM</b>, a novel training-free framework that exhibits exceptional ES capability. Specifically, we first propose <b>Multi-level Mask Generation (MMG)</b> that
+hierarchically processes SAM's AMG outputs to generate reliable object-level masks while preserving fine details at other levels. <b>Entity-level Mask Refinement (EMR)</b> then
+refines these object-level masks into accurate entity-level masks. That is, it separates overlapping masks to address the redundancy issues inherent in SAM's outputs and merges similar masks by evaluating entity-level consistency. Lastly, <b>Under-Segmentation Refinement (USR)</b> addresses under-segmentation by generating additional high-confidence masks fused with EMR outputs to produce the final ES map. These three modules are seamlessly optimized to achieve the best ES without additional training overhead.
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body" style="display:flex;justify-content:center;">
+      <img src="image/ICCV_Framework.png" alt="pipeline" width="80%" class="center">
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-4" style="text-align: center;">Comparison with Entity Segmentation methods</h2>
+        <div class="content has-text-justified">
+          <p>
+            The quantitative comparison with other monocular Entity Segmentation methods is shown below.
+          </p>
+        </div>
+
+        <div class="image-area" style="display:flex;justify-content:center;">
+          <img src="image/table1.png" alt="pipeline" width="50%" class="center">
+        </div>
+
+        <div class="content has-text-justified">
+          <p>
+            The quantitative comparison of various entity segmentation approaches with different backbones is shown below.
+          </p>
+        </div>
+
+        <div class="image-area" style="display:flex;justify-content:center;">
+          <img src="image/table2.png" alt="pipeline" width="40%">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-4" style="text-align: center;">Acknowledgements</h2>
+        <div class="content has-text-justified">
+          <p>
+            This project is is supported by ......
+          </p>
+        </div>
+        <div>
+        <h1 class="section-name" style="margin-top: 30px; text-align: left; font-size: 25px;">
+            BibTex</h1>
+          <a name="bib"></a><pre style="margin-top: 5px;" class="bibtex">
+<code>@article{zhang2025sam,
+  title={E-SAM: Training-Free Segment Every Entity Model},
+  author={Zhang, Weiming and Xiao, Dingwen and Chen, Lei and Wang, Lin},
+  journal={arXiv preprint arXiv:2503.12094},
+  year={2025}
+}</code></pre>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>
