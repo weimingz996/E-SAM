@@ -7,7 +7,7 @@
 <br>
 
 <a href="https://arxiv.org/abs/2503.12094"><img src='https://img.shields.io/badge/arXiv-ESAM-red' alt='Paper PDF'></a>
-<a href='https://weimingz996.github.io/'><img src='https://img.shields.io/badge/Project_Page-ESAM-green' alt='Project Page'></a>
+<a href='https://weimingz996.github.io/E-SAM/'><img src='https://img.shields.io/badge/Project_Page-ESAM-green' alt='Project Page'></a>
 <a href='https://arxiv.org/abs/2503.12094'><img src='https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Demo-blue'></a>
 </div>
 
